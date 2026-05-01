@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" href="assets/favicon.ico"><!-- adjust filename if different -->
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/timer.js"></script>
+  <title>Brandon Holdings Group</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <header class="header">
+      <h1>Brandon Holdings Group</h1>
+      <h2>Our website is under maintenance. We’ll be back shortly.</h2>
+    </header>
+
+    <section class="timer">
+      <div class="timer__item">
+        <div class="timer__data" id="timerResultDays">00</div>
+        <div class="timer__type">Days</div>
+      </div>:
+      <div class="timer__item">
+        <div class="timer__data" id="timerResultHours">00</div>
+        <div class="timer__type">Hours</div>
+      </div>:
+      <div class="timer__item">
+        <div class="timer__data" id="timerResultMinutes">00</div>
+        <div class="timer__type">Minutes</div>
+      </div>:
+      <div class="timer__item">
+        <div class="timer__data" id="timerResultSeconds">00</div>
+        <div class="timer__type">Seconds</div>
+      </div>
+    </section>
+
+    <!-- TIMER CONFIG -->
+   <script type="application/javascript">
+  // Launch date: 3 May 2026, 09:00 local time
+  const launchDate = new Date(2026, 4, 3, 9, 0, 0);
+  // year: 2026
+  // month: 4 (May, because JS months are 0-based: 0=Jan, 4=May)
+  // day: 3
+  // hour: 9
+  // minute: 0
+  // second: 0
+
+  const nowSec = Math.floor(Date.now() / 1000);
+  const endSec = Math.floor(launchDate.getTime() / 1000);
+
+  const diffSec = Math.max(0, endSec - nowSec);
+  const days = Math.floor(diffSec / 86400);
+  const hours = Math.floor((diffSec % 86400) / 3600);
+  const minutes = Math.floor((diffSec % 3600) / 60);
+
+  const startTime = nowSec; // start countdown from now
+  const timeShift = 0;      // no server offset
+
+  startTimer(days, hours, minutes, startTime, timeShift);
+</script>
+
+    <!-- SOCIAL LINKS -->
+    <section class="social-links">
+      <a class="social-links__link" href="https://facebook.com/yourpage" target="_blank" title="Facebook">
+        <span class="icon"><img src="assets/images/facebook.svg" alt="Facebook"></span>
+      </a>
+      <a class="social-links__link" href="https://instagram.com/yourpage" target="_blank" title="Instagram">
+        <span class="icon"><img src="assets/images/instagram.svg" alt="Instagram"></span>
+      </a>
+      <a class="social-links__link" href="https://linkedin.com/company/yourpage" target="_blank" title="LinkedIn">
+        <span class="icon"><img src="assets/images/linkedin.svg" alt="LinkedIn"></span>
+      </a>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer__content">
+      Powered by Re-EL Branding & Tech
+    </div>
+  </footer>
+</body>
+</html>
